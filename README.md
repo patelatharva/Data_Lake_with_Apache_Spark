@@ -1,5 +1,5 @@
 # Data Lake created on S3 with Apache Spark
-In this project, I built an ETL pipeline for a data lake hosted on S3. The ETL script loads data from S3, processes the data into analytics tables using Spark and loads them back into S3. I deployed this Spark process on a cluster using AWS.
+In this project, I built an ETL pipeline for creating data lake hosted on S3. The ETL script loads data stored in JSON format in S3 using Spark, processes the data by doing necessary transformations and loads it into analytics tables serving as facts and dimensions tables using Spark. It saves the data frames into S3 in Parquet format to preserve schema of tables. The Parquet files in S3 are partitioned by appropriate attributes like year and month to facilitate quick retrieval of subset of data in the tables for future analysis by analytics and management teams.
 
 ## Analytics Requirement
 A music streaming startup, Sparkify, has grown their user base and song database even more and want to move their data warehouse to a data lake. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
@@ -48,12 +48,12 @@ After completion of ETL steps, the `etl.py` runs some sample query and counts ro
     print(table)
 
 Running this sample query after running ETL process on small test dataset of songs and log files stored in S3 generated result like this:
-+--------+-------+---------------+
-| Gender | Count | Paid Fraction |
-+--------+-------+---------------+
-|   F    |   55  |      0.27     |
-|   M    |   41  |      0.15     |
-+--------+-------+---------------+
+    +--------+-------+---------------+
+    | Gender | Count | Paid Fraction |
+    +--------+-------+---------------+
+    |   F    |   55  |      0.27     |
+    |   M    |   41  |      0.15     |
+    +--------+-------+---------------+
 The numbers will differ when running this query after running ETL process on actual large dataset of songs metadata and user activity log files stored in S3.
 
 ### How to run
