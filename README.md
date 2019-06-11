@@ -46,14 +46,18 @@ After completion of ETL steps, the `etl.py` runs some sample query and counts ro
     for row in gender_paid_counts:
         table.add_row([row.gender, row.GENDER_COUNT, row.PAID_FRACTION])
     print(table)
-
-Running this sample query after running ETL process on small test dataset of songs and log files stored in S3 generated result like this:
+    
+    Ouptut:
     +--------+-------+---------------+
     | Gender | Count | Paid Fraction |
     +--------+-------+---------------+
     |   F    |   55  |      0.27     |
     |   M    |   41  |      0.15     |
     +--------+-------+---------------+
+    
+
+Running this sample query after running ETL process on small test dataset of songs and log files stored in S3 generated the above output.
+    
 The numbers will differ when running this query after running ETL process on actual large dataset of songs metadata and user activity log files stored in S3.
 
 ### How to run
