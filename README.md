@@ -56,7 +56,7 @@ After completion of ETL steps, the `etl.py` runs some sample query and counts ro
     +--------+-------+---------------+
     
 
-Running this sample query after running ETL process on small test dataset of songs and log files stored in S3 generated the above output. The numbers will differ when running this query after running ETL process on actual large dataset of songs metadata and user activity log files stored in S3.
+Running this sample query after running ETL process on small test dataset of songs and log files stored in S3 generated the above output. The numbers will differ when running this query after running ETL process on actual large dataset of songs metadata and user activity log files stored in S3. [Here is the notebook](https://patelatharva.github.io/Data_Lake_with_Apache_Spark) that I created while working through and testing the steps performed in this `etl.py` on small test dataset. 
 
 ### How to run
 The python scripts in this project are meant to be run by Python version 3+. Following commands are to be run after setting current directory of terminal to be project's directory.
